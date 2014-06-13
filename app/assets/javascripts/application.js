@@ -11,5 +11,8 @@
 // GO AFTER THE REQUIRES BELOW.
 //
 //= require jquery
+//= require turbolinks
+//= require nprogress
+//= require nprogress-turbolinks
 //= require jquery_ujs
 //= require_tree .
