@@ -30,7 +30,7 @@
 
 	<h2>Public Methods</h2>
 
-	<h3>Ticker <span class="code_txt">ticker(opts={})</span></h3>
+	<h3>Ticker <span class="code_snip">ticker(opts={})</span></h3>
 	<div class="code">
     RubyBtce.ticker.btc_usd.last<br/>
     => 555.127<br/><br/>
@@ -42,66 +42,76 @@
       
     &nbsp; info.last<br/>
     &nbsp; => 555.127<br/>
-    end<br/>
+    end
   </div>
-#### Pair Info `pair_info`
-    RubyBtce.pair_info.btc_usd.fee
+
+  <h3>Pair Info <span class="code_snip">pair_info</span></h3>
+  <div class="code">
+    RubyBtce.pair_info.btc_usd.fee<br/>
     => 0.2
+  </div>
 
-#### Depth `depth(limit)`
-    RubyBtce.depth(2).btc_usd.asks
+  <h3>Depth <span class="code_snip">depth(limit)</span></h3>
+  <div class="code">
+    RubyBtce.depth(2).btc_usd.asks<br/>
     => [[554.32, 0.25], [554.329, 0.034]]
+  </div>
 
-#### Order Book `order_book(limit)`
-    RubyBtce.order_book(2).btc_usd.first.price
+  <h3>Order Book <span class="code_snip">order_book(limit)</span></h3>
+  <div class="code">
+    RubyBtce.order_book(2).btc_usd.first.price<br/>
     => 553 
+  </div>
 
-### Private Methods
-
-#### Account Info `account`
-    RubyBtce.account.funds.btc
+	<h2>Private Methods</h2>
+	<h3>Account Info <span class="code_snip">account</span></h3>
+	<div class="code">
+    RubyBtce.account.funds.btc<br/>
     => 0.02199302 
+  </div>
 
-#### New Trade `new_trade(opts={})`
-This method will take up the values for `rate` and `amount` in the format of a string, integer, or float. You can pass these parameters with any number of decimal places, which will automatically be cut off (not rounded) to the maximum number of places for the specific currency.
+  <h3>New Trade <span class="code_snip">new_trade(opts={})</span></h3>
+  <p>This method will take up the values for `rate` and `amount` in the format of a string, integer, or float. You can pass these parameters with any number of decimal places, which will automatically be cut off (not rounded) to the maximum number of places for the specific currency.</p>
 
-    @trade = RubyBtce.new_trade("pair" => "btc_usd", "type" => "sell", "rate"=>"600", "amount"=>"0.02")
+  <div class="code">
+    @trade = RubyBtce.new_trade("pair" => "btc_usd", "type" => "sell", "rate"=>"600", "amount"=>"0.02")<br/><br/>
 
-    @trade.funds.btc
-    => 0.00199302
+    @trade.funds.btc<br/>
+    => 0.00199302<br/><br/>
 
-    @trade.order_id
+    @trade.order_id<br/>
     => 242304103
+  </div>
 
-#### Cancel Trade `cancel(opts={})`
-    @trade = RubyBtce.cancel("order_id"=>242304103)
+  <h3>Cancel Trade <span class="code_snip">cancel(opts={})</span></h3>
+    @trade = RubyBtce.cancel("order_id"=>242304103)<br/><br/>
 
-    @trade.funds.usd
-    => 50.35772684
+    @trade.funds.usd<br/>
+    => 50.35772684<br/><br/>
 
-    @trade.order_id
+    @trade.order_id<br/>
     => 242304103
 
 #### Active Orders `orders(opts={})`
-    @orders = RubyBtce.orders("pair" => "btc_usd")
+    @orders = RubyBtce.orders("pair" => "btc_usd")<br/><br/>
 
-    @orders.each do |id, order| 
-      id
-      => 242304103
+    @orders.each do |id, order| <br/>
+      id<br/>
+      => 242304103<br/><br/>
 
-      order.status
-      => 0
+      order.status<br/>
+      => 0<br/>
     end
 
 #### Trade History `trades(opts={})`
-    @trades = RubyBtce.trades("pair" => "btc_usd")
+    @trades = RubyBtce.trades("pair" => "btc_usd")<br/><br/>
 
-    @trades.each do |id, trade| 
-      id
-      => 35308202
+    @trades.each do |id, trade| <br/>
+      id<br/>
+      => 35308202<br/><br/>
 
-      trade.order_id
-      => 242304103
+      trade.order_id<br/>
+      => 242304103<br/>
     end
 
 #### Transaction History `transactions(opts={})`

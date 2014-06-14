@@ -15,8 +15,19 @@ body {
   padding:0;
   color: #222;
 }
-a:link {
-	text-decoration: none
+a:link, a:visited {
+	text-decoration: none;
+	color:#4183c4;
+	-webkit-transition: all 0.2s ;
+  	 -moz-transition: all 0.2s ;
+  				transition: all 0.2s ;
+}
+a:hover {
+	text-decoration: underline;
+	color:#356EA6;
+}
+a:active {
+	color:#4FA0F0;
 }
 
 .header {
@@ -76,11 +87,18 @@ a:link {
 
 }
 .nav:hover {
+	text-indent:5px;
+	text-decoration: none;
 	color:#333;
 	background: rgba(0, 0, 0, 0.2);
 	-webkit-transition: all 0.3s ;
   	 -moz-transition: all 0.3s ;
   				transition: all 0.3s ;
+}
+.active:link, .active:visited  {
+	color:#3D91E3;
+	text-shadow: 1px 1px 20px #ddd;
+	background: rgba(250, 250, 250, 0.4);
 }
 
 .code {
@@ -95,6 +113,14 @@ a:link {
 }
 .code_txt {
 	font-size: 13px;
+	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+	margin: 0;
+	border: 1px solid #ddd;
+	background-color: #f8f8f8;
+	border-radius: 3px;
+	padding: 0;
+}
+.code_snip {
 	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
 	margin: 0;
 	border: 1px solid #ddd;

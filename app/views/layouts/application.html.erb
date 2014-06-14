@@ -1,43 +1,26 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>PortfolioApp</title>
+  <title>Brock T. Harris</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
   <%= csrf_meta_tags %>
 </head>
 <body>
+
 	<%= render "layouts/header" %>
-
+	
 	<div class="container">
-		
 		<div class="page">
-
 			<div class="section">
-		  	<div class="col-2 nav_group">
-		    
-		      <%= link_to "Code", code_path, :class => "nav" %>
-
-		      <%= link_to "News", news_path, :class => "nav" %>
-
-		      <%= link_to "Projects", projects_path, :class => "nav" %>
-
-		      <%= link_to "About", about_path, :class => "nav" %>
-<div class="footer col-2">Brock Harris &copy; 2014</div>
-
-		  	</div>
-
-
-		  	
+			
+			<%= render "layouts/sidebar" %>
+				
 				<div class="col-10">
 					<%= yield %>
-					
 				</div>   
 			</div>
-
 		</div>
 	</div>
-
-	
 </body>
 </html>
